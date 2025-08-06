@@ -76,7 +76,7 @@ function Home() {
   useEffect(() => {
     const validateCode = async () => {
       try {
-        const response = await axios.get(`https://canaldeventebackend.sniperbuisnesscenter.com/users/get-links/${affiliationCode}/${phoneNumber}`);
+        const response = await axios.get(`https://canaldeventebackend.sniperbuisnesscenter.com/users/get-link/${affiliationCode}/${phoneNumber}`);
         console.log(response.data);
         if (!response.data) {
           console.log("No response from server");
