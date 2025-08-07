@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 import logo from "../assets/img/logo-sbc.png";
 
-function onClick(){
+function onClick() {
   window.location.href = "https://wa.me/+237699999999?text=Bonjour, j'ai trouvé une page fake sur votre site. Pouvez-vous m'aider?";
 }
 
@@ -31,7 +31,7 @@ function Fake() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white relative">
       {/* Header */}
-      <motion.header 
+      <motion.header
         className="bg-white shadow-sm"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -39,9 +39,9 @@ function Fake() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            <motion.img 
-              src={logo} 
-              alt="SBC Logo" 
+            <motion.img
+              src={logo}
+              alt="SBC Logo"
               className="h-12 w-auto"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
@@ -56,34 +56,34 @@ function Fake() {
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Floating Circles */}
           <div className="absolute top-20 left-10 w-20 h-20 bg-[#1862f0] opacity-10 rounded-full animate-float"></div>
-          <div className="absolute top-40 right-20 w-16 h-16 bg-[#92b127] opacity-10 rounded-full animate-bounce" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-40 right-20 w-16 h-16 bg-[#92b127] opacity-10 rounded-full animate-bounce" style={{ animationDelay: '1s' }}></div>
           <div className="absolute bottom-40 left-20 w-24 h-24 bg-[#f49101] opacity-10 rounded-full animate-ping"></div>
-          <div className="absolute top-60 left-1/4 w-12 h-12 bg-[#1862f0] opacity-10 rounded-full animate-spin" style={{animationDuration: '8s'}}></div>
+          <div className="absolute top-60 left-1/4 w-12 h-12 bg-[#1862f0] opacity-10 rounded-full animate-spin" style={{ animationDuration: '8s' }}></div>
           <div className="absolute bottom-60 right-1/3 w-18 h-18 bg-[#92b127] opacity-10 rounded-full animate-pulse-slow"></div>
-          <div className="absolute top-80 left-1/3 w-14 h-14 bg-[#f49101] opacity-10 rounded-full animate-float" style={{animationDelay: '2s'}}></div>
-          <div className="absolute bottom-80 left-1/2 w-16 h-16 bg-[#1862f0] opacity-10 rounded-full animate-bounce" style={{animationDelay: '3s'}}></div>
+          <div className="absolute top-80 left-1/3 w-14 h-14 bg-[#f49101] opacity-10 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute bottom-80 left-1/2 w-16 h-16 bg-[#1862f0] opacity-10 rounded-full animate-bounce" style={{ animationDelay: '3s' }}></div>
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             className="text-center"
             variants={staggerContainer}
             initial="initial"
             animate="animate"
           >
-            <motion.h1 
+            <motion.h1
               className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight z-20"
               variants={fadeInUp}
             >
               <span className="text-red-600">⚠️ ATTENTION ⚠️</span>
             </motion.h1>
-            <motion.h2 
+            <motion.h2
               className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight"
               variants={fadeInUp}
             >
               Cette page est{" "}
               <span className="text-red-600">FAKE</span>
             </motion.h2>
-            <motion.p 
+            <motion.p
               className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto mb-8 leading-relaxed"
               variants={fadeInUp}
             >
@@ -95,7 +95,7 @@ function Fake() {
       </section>
 
       {/* Warning Section */}
-      <motion.section 
+      <motion.section
         className="py-16 bg-red-50"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -103,14 +103,14 @@ function Fake() {
         viewport={{ once: true }}
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div 
+          <motion.div
             className="bg-white rounded-2xl shadow-lg p-8 mb-8"
             variants={scaleIn}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
           >
-            <motion.div 
+            <motion.div
               className="text-6xl mb-6"
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
@@ -123,7 +123,7 @@ function Fake() {
               Page Non Trouvée
             </h3>
             <p className="text-gray-600 text-lg mb-6">
-              Cette URL ne correspond à aucune page valide de notre site. 
+              Cette URL ne correspond à aucune page valide de notre site.
               Il est possible que le lien soit incorrect ou que la page ait été supprimée.
             </p>
             <div className="bg-yellow-100 border-l-4 border-yellow-500 p-4 mb-6">
@@ -136,7 +136,7 @@ function Fake() {
       </motion.section>
 
       {/* Contact Section */}
-      <motion.section 
+      <motion.section
         className="py-16 bg-white"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -144,7 +144,7 @@ function Fake() {
         viewport={{ once: true }}
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-gray-900 mb-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -153,8 +153,8 @@ function Fake() {
           >
             Besoin d'aide ?
           </motion.h2>
-          
-          <motion.div 
+
+          <motion.div
             className="bg-gradient-to-r from-[#f49101] to-[#e78c03] rounded-2xl p-8 text-white mb-8"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -168,8 +168,8 @@ function Fake() {
             <p className="text-lg mb-6">
               Notre équipe est disponible pour vous aider et résoudre ce problème rapidement.
             </p>
-            
-            <motion.button 
+
+            <motion.button
               onClick={onClick}
               className="bg-white text-[#f49101] font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-3 mx-auto"
               whileHover={{ scale: 1.05 }}
@@ -180,7 +180,7 @@ function Fake() {
             </motion.button>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="bg-gray-50 rounded-2xl p-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -205,14 +205,14 @@ function Fake() {
                   <p className="text-gray-600 text-sm">Utilisez le bouton WhatsApp ci-dessus</p>
                 </div>
               </div>
-             
+
             </div>
           </motion.div>
         </div>
       </motion.section>
 
       {/* Footer */}
-      <motion.footer 
+      <motion.footer
         className="bg-gray-900 text-white py-8"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -220,9 +220,9 @@ function Fake() {
         viewport={{ once: true }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.img 
-            src={logo} 
-            alt="SBC Logo" 
+          <motion.img
+            src={logo}
+            alt="SBC Logo"
             className="h-12 w-auto mx-auto mb-4"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
