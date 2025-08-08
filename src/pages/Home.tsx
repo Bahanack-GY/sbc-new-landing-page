@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import RegistrationPopup from "../components/BottomPopUp";
 
 import logo from "../assets/img/logo-sbc.png";
 import phone from "../assets/img/rzezer2.png";
@@ -30,6 +31,8 @@ import telegram from "../assets/img/telegram.png"
 import futuriste from "../assets/img/logo-futuriste.png"
 import extremevetement from "../assets/img/logo-ev.png"
 import wilevent from "../assets/img/logo-we.jpg"
+
+import presentation from "../assets/video/IMG_6637.MP4"
 
 
 // Animation variants
@@ -80,18 +83,18 @@ function Home() {
         console.log(response.data);
         if (!response.data) {
           console.log("No response from server");
-          navigate('/fake');
+          navigate('/');
         }
       } catch (error) {
         console.log(error);
-        navigate('/fake');
+        navigate('/');
       }
     };
 
     if (affiliationCode && phoneNumber) {
       validateCode();
     } else {
-      navigate('/fake');
+      navigate('/');
     }
   }, [affiliationCode, phoneNumber, navigate]);
 
@@ -213,7 +216,7 @@ function Home() {
             animate="animate"
           >
             <video className="w-full" controls>
-              <source src="src/assets/video/IMG_6637.MP4" type="video/mp4" />
+              <source src={presentation} type="video/mp4" />
               Votre navigateur ne prends pas en charge cette vidéo
             </video>
           </motion.div>
@@ -875,6 +878,8 @@ function Home() {
         </div>
       </motion.footer>
 
+      {/* Bottom Popup */}
+      <RegistrationPopup />
 
     </div>
   );
