@@ -83,18 +83,18 @@ function Home() {
         console.log(response.data);
         if (!response.data) {
           console.log("No response from server");
-          navigate('/');
+          navigate('/fake');
         }
       } catch (error) {
         console.log(error);
-        navigate('/');
+        navigate('/fake');
       }
     };
 
     if (affiliationCode && phoneNumber) {
       validateCode();
     } else {
-      navigate('/');
+      navigate('/fake');
     }
   }, [affiliationCode, phoneNumber, navigate]);
 
