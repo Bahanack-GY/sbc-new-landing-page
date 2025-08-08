@@ -83,18 +83,18 @@ function Home() {
         console.log(response.data);
         if (!response.data) {
           console.log("No response from server");
-          navigate('/fake');
+          navigate('/');
         }
       } catch (error) {
         console.log(error);
-        navigate('/fake');
+        navigate('/');
       }
     };
 
     if (affiliationCode && phoneNumber) {
       validateCode();
     } else {
-      navigate('/fake');
+      navigate('/');
     }
   }, [affiliationCode, phoneNumber, navigate]);
 
@@ -221,17 +221,21 @@ function Home() {
             </video>
           </motion.div>
           <motion.button onClick={handleClick}
-            className="font-accent bg-[#f49101] hover:bg-[#e08501] text-white font-bold py-4 px-4 md:px-8 rounded-xl text-sm md:text-lg transition-all duration-300 transform hover:scale-105"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            className="font-accent bg-[#f49101] hover:bg-[#e08501] text-white font-bold py-4 px-4 md:px-8 rounded-xl text-sm md:text-lg shadow"
+            animate={{
+              x: [-2, 2, -2, 2, -2, 2, -2, 2, 0],
+              y: [-1, 1, -1, 1, -1, 1, -1, 1, 0]
+            }}
+            transition={{
+              duration: 0.5,
+              repeat: Infinity,
+              repeatDelay: 3
+            }}
           >
-            Je m'inscrit maintenant
+            Je m'inscris maintenant
           </motion.button>
           <motion.div
-            className="mt-8 flex justify-center"
+            className="mt-8 flex justify-center overflow-hidden"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -662,15 +666,22 @@ function Home() {
             <motion.button
               onClick={handleClick}
               className="bg-[#f49101] hover:bg-[#e08501] text-white font-bold py-4 px-4 md:px-8 rounded-xl text-sm md:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              animate={{
+                x: [-2, 2, -2, 2, -2, 2, -2, 2, 0],
+                y: [-1, 1, -1, 1, -1, 1, -1, 1, 0]
+              }}
+              transition={{
+                duration: 0.5,
+                repeat: Infinity,
+                repeatDelay: 3
+              }}
             >
-              Je m'inscrit maintenant
+              Je m'inscris maintenant
             </motion.button>
           </motion.div>
 
           <motion.div
-            className="bg-[#f49101] text-white rounded-2xl p-6 mb-8 text-center"
+            className=" text-black rounded-2xl p-6 mb-8 text-center"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
@@ -713,10 +724,17 @@ function Home() {
             <motion.button
               onClick={handleClick}
               className="bg-[#f49101] hover:bg-[#e08501] text-white font-bold py-4 px-4 md:px-8 rounded-xl text-sm md:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              animate={{
+                x: [-2, 2, -2, 2, -2, 2, -2, 2, 0],
+                y: [-1, 1, -1, 1, -1, 1, -1, 1, 0]
+              }}
+              transition={{
+                duration: 0.5,
+                repeat: Infinity,
+                repeatDelay: 3
+              }}
             >
-              Je m'inscrit maintenant
+              Je m'inscris maintenant
             </motion.button>
           </motion.div>
 
@@ -757,9 +775,16 @@ function Home() {
           >
             <motion.button
               onClick={handleClick}
-              className="bg-[#f49101] hover:bg-[#e08501] text-white font-bold py-4 px-4 md:px-8 rounded-xl text-sm md:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg leading-tight"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="bg-[#f49101] hover:bg-[#e08501] text-white font-bold py-4 px-4 md:px-8 rounded-xl text-sm md:text-lg  shadow-lg leading-tight"
+              animate={{
+                x: [-2, 2, -2, 2, -2, 2, -2, 2, 0],
+                y: [-1, 1, -1, 1, -1, 1, -1, 1, 0]
+              }}
+              transition={{
+                duration: 0.5,
+                repeat: Infinity,
+                repeatDelay: 3
+              }}
             >
               <span className="font-accent block sm:inline">Je prends la décision aujourd'hui</span>
               <span className="font-accent block sm:inline"> de transformer ma vie avec la SBC</span>
