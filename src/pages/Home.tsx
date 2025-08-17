@@ -27,6 +27,7 @@ import moneythree from "../assets/img/screen3.jpg"
 import moneyfour from "../assets/img/screen4.jpg"
 import secured from "../assets/img/secured.jpg"
 import telegram from "../assets/img/telegram.png"
+import whatsapp from "../assets/img/whatsapp.png"
 
 import futuriste from "../assets/img/logo-futuriste.png"
 import extremevetement from "../assets/img/logo-ev.png"
@@ -83,24 +84,29 @@ function Home() {
         console.log(response.data);
         if (!response.data) {
           console.log("No response from server");
-          navigate('/');
+          navigate('/fake');
         }
       } catch (error) {
         console.log(error);
-        navigate('/');
+        navigate('/fake');
       }
     };
 
     if (affiliationCode && phoneNumber) {
       validateCode();
     } else {
-      navigate('/');
+      navigate('/fake');
     }
   }, [affiliationCode, phoneNumber, navigate]);
 
   // Handle click and redirect to the desired link
   function handleClick() {
     const targetUrl = `https://sniperbuisnesscenter.com/signup?affiliationCode=${affiliationCode}`;
+    window.location.href = targetUrl; // Redirect to the new URL
+  }
+
+  function handleWhatsapp() {
+    const targetUrl = `https://wa.me/${phoneNumber}`;
     window.location.href = targetUrl; // Redirect to the new URL
   }
 
@@ -823,6 +829,36 @@ function Home() {
             </a>
           </motion.div>
         </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.p
+            className="font-primary text-lg text-gray-700 mb-6 leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            Contact ton parrain pour t'aider à t'inscrire et pour repondre à tes questions.
+          </motion.p>
+
+          <motion.div
+            className="flex justify-center items-center gap-4"
+            animate={{
+              x: [-2, 2, -2, 2, -2, 2, -2, 2, 0],
+              y: [-1, 1, -1, 1, -1, 1, -1, 1, 0]
+            }}
+            transition={{
+              duration: 0.5,
+              repeat: Infinity,
+              repeatDelay: 3
+            }}
+          >
+            <a onClick={handleWhatsapp} target="_blank" rel="noopener noreferrer">
+              <img src={whatsapp} alt="whatsapp" className="mb-8 w-40 h-40" />
+            </a>
+          </motion.div>
+        </div>
+
+        
       </section>
 
       {/* Partners Section */}

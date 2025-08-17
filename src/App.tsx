@@ -7,7 +7,7 @@ function App() {
     <Routes>
       <Route path="/:affiliationCode/:phoneNumber" element={<Home />} />
       <Route path="/fake" element={<Fake />} />
-      <Route path="/*" element={<Home />} />
+      <Route path="/*" element={<Fake />} />
     </Routes>
   )
 }
