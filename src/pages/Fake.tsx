@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
+import { FaExclamationTriangle, FaBan, FaWhatsapp } from "react-icons/fa";
+import { MdLooksOne, MdLooksTwo } from "react-icons/md";
 
 import logo from "../assets/img/logo-sbc.png";
 
 function onClick() {
-  window.location.href = "https://wa.me/+237699999999?text=Bonjour, j'ai trouvé une page fake sur votre site. Pouvez-vous m'aider?";
+  window.location.href = "https://wa.me/+237682903535?text=Bonjour, j'ai trouvé une page fake sur votre site. Pouvez-vous m'aider?";
 }
 
 // Animation variants
@@ -32,7 +34,7 @@ function Fake() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white relative">
       {/* Header */}
       <motion.header
-        className="bg-white shadow-sm"
+        className="bg-white"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -74,7 +76,9 @@ function Fake() {
               className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight z-20"
               variants={fadeInUp}
             >
-              <span className="text-red-600">⚠️ ATTENTION ⚠️</span>
+              <span className="text-red-600 flex items-center justify-center gap-2">
+                <FaExclamationTriangle className="w-12 h-12" /> ATTENTION <FaExclamationTriangle className="w-12 h-12" />
+              </span>
             </motion.h1>
             <motion.h2
               className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight"
@@ -104,7 +108,7 @@ function Fake() {
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            className="bg-white rounded-2xl shadow-lg p-8 mb-8"
+            className="bg-white rounded-2xl p-8 mb-8"
             variants={scaleIn}
             initial="initial"
             whileInView="animate"
@@ -117,7 +121,7 @@ function Fake() {
               transition={{ duration: 0.5, type: "spring" }}
               viewport={{ once: true }}
             >
-              🚫
+              <FaBan className="w-24 h-24 mx-auto text-red-600" />
             </motion.div>
             <h3 className="text-2xl font-bold text-red-600 mb-4">
               Page Non Trouvée
@@ -171,11 +175,11 @@ function Fake() {
 
             <motion.button
               onClick={onClick}
-              className="bg-white text-[#f49101] font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-3 mx-auto"
+              className="bg-white text-[#f49101] font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 mx-auto"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="text-2xl">📱</span>
+              <FaWhatsapp className="text-2xl" />
               Contacter l'Administrateur sur WhatsApp
             </motion.button>
           </motion.div>
@@ -192,14 +196,14 @@ function Fake() {
             </h4>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
               <div className="flex items-start gap-3">
-                <span className="text-2xl">1️⃣</span>
+                <MdLooksOne className="text-2xl text-blue-600" />
                 <div>
                   <h5 className="font-semibold text-gray-900">Vérifiez l'URL</h5>
                   <p className="text-gray-600 text-sm">Assurez-vous que l'adresse est correcte</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <span className="text-2xl">2️⃣</span>
+                <MdLooksTwo className="text-2xl text-blue-600" />
                 <div>
                   <h5 className="font-semibold text-gray-900">Contactez-nous</h5>
                   <p className="text-gray-600 text-sm">Utilisez le bouton WhatsApp ci-dessus</p>
@@ -228,7 +232,7 @@ function Fake() {
             transition={{ duration: 0.2 }}
           />
           <p className="text-gray-400">
-            © 2024 Sniper Business Center. Tous droits réservés.
+            © {new Date().getFullYear()} Sniper Business Center. Tous droits réservés.
           </p>
         </div>
       </motion.footer>

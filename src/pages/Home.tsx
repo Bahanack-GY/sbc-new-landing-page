@@ -32,6 +32,7 @@ import whatsapp from "../assets/img/whatsapp.png"
 import futuriste from "../assets/img/logo-futuriste.png"
 import extremevetement from "../assets/img/logo-ev.png"
 import wilevent from "../assets/img/logo-we.jpg"
+import offreExceptionnelle from "../assets/img/offre-exceptionelle.jpeg"
 
 import presentation from "../assets/video/IMG_6637.MP4"
 
@@ -418,6 +419,28 @@ function Home() {
               ))}
             </motion.div>
           </div>
+        </div>
+
+        {/* Offre Exceptionnelle Section */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pb-12">
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-[#f49101] mb-8">
+              Offre exceptionnelle
+            </h2>
+            <motion.img
+              src={offreExceptionnelle}
+              alt="Offre Exceptionnelle SBC"
+              className="w-full max-w-4xl mx-auto rounded-2xl shadow-xl"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            />
+          </motion.div>
         </div>
       </motion.section>
 
@@ -934,7 +957,7 @@ function Home() {
             transition={{ duration: 0.2 }}
           />
           <p className="font-primary text-gray-400">
-            © 2025 Sniper Business Center. Tous droits réservés.
+            © {new Date().getFullYear()} Sniper Business Center. Tous droits réservés.
           </p>
         </div>
       </motion.footer>
