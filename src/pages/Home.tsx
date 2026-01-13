@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import RegistrationPopup from "../components/BottomPopUp";
 
@@ -26,7 +26,7 @@ import moneytwo from "../assets/img/screen2.jpg"
 import moneythree from "../assets/img/screen3.jpg"
 import moneyfour from "../assets/img/screen4.jpg"
 import secured from "../assets/img/secured.jpg"
-import telegram from "../assets/img/telegram.png"
+
 import whatsapp from "../assets/img/whatsapp.png"
 
 import futuriste from "../assets/img/logo-futuriste.png"
@@ -832,7 +832,7 @@ function Home() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            Rejoins le canal télégram officiel de la sniper business center, si tu rencontres des difficultés lors de l'inscription ou pour être informé sur les mises à jours de l'application
+            Besoin d'aide ? Visitez notre centre d'aide pour regarder les tutoriels vidéos et comprendre comment utiliser la plateforme.
           </motion.p>
 
           <motion.div
@@ -847,9 +847,9 @@ function Home() {
               repeatDelay: 3
             }}
           >
-            <a href="https://t.me/sniperbusinesscenterafrica" target="_blank" rel="noopener noreferrer">
-              <img src={telegram} alt="telegram" className="mb-8" />
-            </a>
+            <Link to="/help" className="inline-block bg-[#1862f0] hover:bg-[#1553cc] text-white font-bold py-4 px-8 rounded-xl shadow-md transition-colors mb-8 text-xl">
+              Accéder au Guide d'utilisation
+            </Link>
           </motion.div>
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
