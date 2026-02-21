@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import logo from "../assets/img/logo-sbc.png";
 
@@ -174,6 +174,9 @@ const categories: VideoCategory[] = [
 ];
 
 function Help() {
+  const location = useLocation();
+  const { affiliationCode, phoneNumber } = location.state || {};
+  const homeLink = (affiliationCode && phoneNumber) ? `/${affiliationCode}/${phoneNumber}` : "/";
 
   return (
     <div className="min-h-screen bg-gray-50 font-sans text-gray-900">
@@ -186,7 +189,7 @@ function Help() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            <Link to="/">
+            <Link to={homeLink}>
               <motion.img 
                 src={logo} 
                 alt="SBC Logo" 
@@ -195,7 +198,7 @@ function Help() {
                 transition={{ duration: 0.2 }}
               />
             </Link>
-            <Link to="/" className="text-gray-600 hover:text-[#1862f0] font-medium transition-colors">
+            <Link to={homeLink} className="text-gray-600 hover:text-[#1862f0] font-medium transition-colors">
               Retour à l'accueil
             </Link>
           </div>
@@ -257,7 +260,7 @@ function Help() {
                     <video 
                       className="w-full h-full object-cover"
                       controls
-                      poster={logo} // Utiliser le logo comme placeholder si pas de miniature
+                      poster={logo} 
                       playsInline
                     >
                       <source src={video.src} type="video/mp4" />

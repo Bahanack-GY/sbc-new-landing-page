@@ -34,7 +34,7 @@ import extremevetement from "../assets/img/logo-ev.png"
 import wilevent from "../assets/img/logo-we.jpg"
 import offreExceptionnelle from "../assets/img/offre-exceptionelle.jpeg"
 
-import presentation from "../assets/video/IMG_6637.MP4"
+import presentation from "../assets/video/IMG_8133.mp4"
 
 
 // Animation variants
@@ -436,10 +436,25 @@ function Home() {
             <motion.img
               src={offreExceptionnelle}
               alt="Offre Exceptionnelle SBC"
-              className="w-full max-w-4xl mx-auto rounded-2xl shadow-xl"
+              className="w-full max-w-4xl mx-auto rounded-2xl shadow-xl mb-8"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             />
+            <motion.button
+              onClick={handleClick}
+              className="bg-[#f49101] hover:bg-[#e08501] text-white font-bold py-4 px-4 md:px-8 rounded-xl text-sm md:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+              animate={{
+                x: [-2, 2, -2, 2, -2, 2, -2, 2, 0],
+                y: [-1, 1, -1, 1, -1, 1, -1, 1, 0]
+              }}
+              transition={{
+                duration: 0.5,
+                repeat: Infinity,
+                repeatDelay: 3
+              }}
+            >
+              Je m'inscris maintenant
+            </motion.button>
           </motion.div>
         </div>
       </motion.section>
@@ -847,7 +862,7 @@ function Home() {
               repeatDelay: 3
             }}
           >
-            <Link to="/help" className="inline-block bg-[#1862f0] hover:bg-[#1553cc] text-white font-bold py-4 px-8 rounded-xl shadow-md transition-colors mb-8 text-xl">
+            <Link to="/help" state={{ affiliationCode, phoneNumber }} className="inline-block bg-[#1862f0] hover:bg-[#1553cc] text-white font-bold py-4 px-8 rounded-xl shadow-md transition-colors mb-8 text-xl">
               Accéder au Guide d'utilisation
             </Link>
           </motion.div>
