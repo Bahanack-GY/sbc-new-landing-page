@@ -35,6 +35,7 @@ import wilevent from "../assets/img/logo-we.jpg"
 import offreExceptionnelle from "../assets/img/offre-exceptionelle.jpeg"
 
 import presentation from "../assets/video/IMG_8133.mp4"
+import statutWhatsapp from "../assets/video/new_whatsapp_status_feature.mp4"
 
 
 // Animation variants
@@ -214,7 +215,63 @@ function Home() {
         />
       </motion.div>
 
-      <section className="bg-gradient-to-b from-blue-700 to-white pt-16">
+      {/* Statut WhatsApp Rémunéré Section */}
+      <section className="bg-gradient-to-b from-blue-700 to-white pt-16 pb-12">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.h2
+            className="font-heading text-3xl md:text-4xl font-bold text-white mb-4"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            Sois <span className="text-[#f49101]">payé</span> pour publier du contenu sur ton{" "}
+            <span className="text-[#92b127]">statut WhatsApp</span>
+          </motion.h2>
+          <motion.p
+            className="font-primary text-base md:text-lg text-white/90 max-w-2xl mx-auto mb-8 leading-relaxed"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            viewport={{ once: true }}
+          >
+            Avec la nouvelle fonctionnalité de la{" "}
+            <span className="font-semibold">Sniper Business Center</span>, publie les
+            contenus de nos partenaires sur ton statut WhatsApp et gagne de l'argent à
+            chaque publication. Plus tu as de vues, plus tu gagnes : ton statut devient
+            une véritable source de revenus.
+          </motion.p>
+          <motion.div
+            className="bg-white rounded-2xl overflow-hidden shadow-xl mb-8"
+            variants={scaleIn}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            <video className="w-full" controls playsInline preload="metadata">
+              <source src={statutWhatsapp} type="video/mp4" />
+              Votre navigateur ne prends pas en charge cette vidéo
+            </video>
+          </motion.div>
+          <motion.button
+            onClick={handleClick}
+            className="font-accent bg-[#f49101] hover:bg-[#e08501] text-white font-bold py-4 px-4 md:px-8 rounded-xl text-sm md:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+            animate={{
+              x: [-2, 2, -2, 2, -2, 2, -2, 2, 0],
+              y: [-1, 1, -1, 1, -1, 1, -1, 1, 0]
+            }}
+            transition={{
+              duration: 0.5,
+              repeat: Infinity,
+              repeatDelay: 3
+            }}
+          >
+            Je m'inscris maintenant
+          </motion.button>
+        </div>
+      </section>
+
+      <section className="bg-white pt-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             className="bg-white rounded-2xl overflow-hidden mb-8"
@@ -222,7 +279,7 @@ function Home() {
             initial="initial"
             animate="animate"
           >
-            <video className="w-full" controls>
+            <video className="w-full" controls preload="metadata">
               <source src={presentation} type="video/mp4" />
               Votre navigateur ne prends pas en charge cette vidéo
             </video>
